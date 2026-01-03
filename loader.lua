@@ -16,7 +16,7 @@ print("Starting key validation...")
 
 local success, response = pcall(function()
     return HttpService:PostAsync(
-        "http://localhost:3000/auth", -- Change if server is hosted online
+        "https://your-server-name.onrender.com/auth", -- Change if server is hosted online
         HttpService:JSONEncode({ key = key, hwid = hwid }),
         Enum.HttpContentType.ApplicationJson
     )
