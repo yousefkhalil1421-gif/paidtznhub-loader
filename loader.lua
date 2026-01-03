@@ -6,7 +6,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
 
--- Make sure you set this before executing
+-- SET THIS IN GAME BEFORE EXECUTING
 local key = getgenv().PAIDTZN_KEY
 if not key then
     player:Kick("PAID TZN HUB | No key provided")
@@ -15,10 +15,10 @@ end
 
 print("Starting key validation...")
 
--- Attempt to contact server
+-- Contact server
 local success, response = pcall(function()
     return HttpService:PostAsync(
-        "https://chilly-ants-fail.loca.lt/auth", -- replace with your Localtunnel or public server URL + /auth
+        "https://chilly-ants-fail.loca.lt/auth", -- replace with your URL + /auth
         HttpService:JSONEncode({ key = key, hwid = hwid }),
         Enum.HttpContentType.ApplicationJson
     )
@@ -36,7 +36,7 @@ end
 
 print("Server response received:", response)
 
--- Decode JSON safely
+-- Decode JSON
 local data
 local decodeSuccess, decodeErr = pcall(function()
     data = HttpService:JSONDecode(response)
@@ -47,7 +47,7 @@ if not decodeSuccess then
     return
 end
 
--- Handle server response
+-- Handle response
 if data.status == "invalid_key" then
     player:Kick("PAID TZN HUB | Invalid key")
 elseif data.status == "hwid_mismatch" then
@@ -60,5 +60,5 @@ else
     player:Kick("PAID TZN HUB | Unknown server response")
 end
 
--- Load your main script after validation
+-- Load your main script
 loadstring(game:HttpGet("https://raw.githubusercontent.com/yousefkhalil1421-gif/paidtznhub/main/mainscript.lua"))()
