@@ -1,3 +1,5 @@
+local HttpService = game:GetService("HttpService")
+HttpService.HttpEnabled = true
 -- PAID TZN HUB loader with debug prints
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
