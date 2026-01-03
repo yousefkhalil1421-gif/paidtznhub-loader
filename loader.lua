@@ -61,5 +61,4 @@ else
 end
 
 -- Load your main script after validation
-loadstring(game:HttpGet("loadstring(game:HttpGet("https://raw.githubusercontent.com/yousefkhalil1421-gif/paidtznhub/main/mainscript.lua"))()
-"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/yousefkhalil1421-gif/paidtznhub/main/mainscript.lua"))()
