@@ -1,3 +1,4 @@
+print("LOADER STARTED")
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
