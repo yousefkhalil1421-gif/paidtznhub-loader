@@ -18,7 +18,7 @@ print("Starting key validation...")
 -- Attempt to contact server
 local success, response = pcall(function()
     return HttpService:PostAsync(
-        "https://wild-fox-42.loca.lt/auth", -- replace with your Localtunnel or public server URL + /auth
+        "https://chilly-ants-fail.loca.lt/auth", -- replace with your Localtunnel or public server URL + /auth
         HttpService:JSONEncode({ key = key, hwid = hwid }),
         Enum.HttpContentType.ApplicationJson
     )
