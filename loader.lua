@@ -1,7 +1,7 @@
 print("LOADER STARTED")
+
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
-local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
 
 local key = getgenv().PAIDTZN_KEY
 if not key then
@@ -9,22 +9,17 @@ if not key then
     return
 end
 
-local Keys = {
-    ["PAIDTZNHUB4839201"] = "UNBOUND",
-    ["PAIDTZNHUB9174628"] = "UNBOUND",
-    ["PAIDTZNHUB5601834"] = "UNBOUND",
+-- STATIC validation (temporary)
+local ValidKeys = {
+    ["PAIDTZNHUB4839201"] = true,
+    ["PAIDTZNHUB9174628"] = true,
+    ["PAIDTZNHUB5601834"] = true,
 }
 
-if not Keys[key] then
+if not ValidKeys[key] then
     player:Kick("PAID TZN HUB | Invalid key")
     return
 end
 
-if Keys[key] == "UNBOUND" then
-    Keys[key] = hwid
-elseif Keys[key] ~= hwid then
-    player:Kick("PAID TZN HUB | Key already used on another PC")
-    return
-end
-
-loadstring(game:HttpGet("https://RAW_MAIN_SCRIPT_LINK_HERE"))()
+-- allowed
+loadstring(game:HttpGet("RAW_MAIN_SCRIPT_LINK"))()
