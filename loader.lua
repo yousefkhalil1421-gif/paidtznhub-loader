@@ -1,7 +1,7 @@
-local HttpService = game:GetService("HttpService")
-HttpService.HttpEnabled = true
 -- PAID TZN HUB loader with debug prints
 local HttpService = game:GetService("HttpService")
+HttpService.HttpEnabled = true
+
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -14,9 +14,10 @@ end
 
 print("Starting key validation...")
 
+-- Send key and HWID to auth server
 local success, response = pcall(function()
     return HttpService:PostAsync(
-        ""https://chilly-ants-fail.loca.lt"", -- Change if server is hosted online
+        "https://chilly-ants-fail.loca.lt/auth", -- your Localtunnel or public URL
         HttpService:JSONEncode({ key = key, hwid = hwid }),
         Enum.HttpContentType.ApplicationJson
     )
