@@ -18,7 +18,7 @@ print("Starting key validation...")
 -- Contact server
 local success, response = pcall(function()
     return HttpService:PostAsync(
-        "npm install -g localtunnel/auth", -- replace with your URL + /auth
+        "https://busy-crabs-lead.loca.lt/auth", -- replace with your URL + /auth
         HttpService:JSONEncode({ key = key, hwid = hwid }),
         Enum.HttpContentType.ApplicationJson
     )
