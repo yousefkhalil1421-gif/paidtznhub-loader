@@ -1,7 +1,6 @@
 -- PAID TZN HUB loader with debug prints
 local HttpService = game:GetService("HttpService")
 HttpService.HttpEnabled = true
-
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -45,4 +44,4 @@ else
 end
 
 -- Load your main script after validation
-loadstring(game:HttpGet("https://RAW_MAIN_SCRIPT_LINK_HERE"))()
+loadstring(game:HttpGet("https://github.com/yousefkhalil1421-gif/paidtznhub-loader/blob/main/loader.lua"))()
